@@ -3,6 +3,8 @@ import {
     backend,
     creator,
     web,
+    emptyroom,
+    boy,
     javascript,
     typescript,
     html,
