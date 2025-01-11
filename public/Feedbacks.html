@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>3D Cube with Poem</title>
   <style>
-
     .card,
     .content,
     body {
@@ -30,33 +29,33 @@
     }
 
     .card {
-      width: 1280px;
-      height: 720px;
+      width: 1536px; /* Increased from 1280px */
+      height: 864px; /* Increased from 720px */
       margin: 0;
       justify-content: center;
     }
 
     .container-full,
     .content {
-      width: 1000px;
-      height: 562px;
+      width: 1200px; /* Increased from 1000px */
+      height: 675px; /* Increased from 562px */
     }
 
     .backgroundImage {
       position: absolute;
-      width: 1000px;
+      width: 1200px; /* Increased from 1000px */
     }
 
     .boyImage {
       position: absolute;
-      width: 1000px;
+      width: 1200px; /* Increased from 1000px */
       z-index: 2;
-      animation: 200s linear infinite blur;
+      animation: none;
     }
 
     .content {
       border-radius: 40px;
-      animation: 200s linear infinite brightness;
+      animation: none;
     }
 
     .container {
@@ -74,13 +73,13 @@
       margin: 0;
       justify-content: center;
       transform: scale(1);
-      animation: 200s linear infinite zoom-in;
+      animation: none;
     }
 
     .cube,
     .face {
-      width: 870px;
-      height: 190px;
+      width: 1044px; /* Increased from 870px */
+      height: 228px; /* Increased from 190px */
     }
 
     .cube {
@@ -104,8 +103,8 @@
 
     .bottom,
     .top {
-      width: 870px;
-      height: 870px;
+      width: 1044px; /* Increased from 870px */
+      height: 1044px; /* Increased from 870px */
     }
 
     p {
@@ -113,7 +112,7 @@
       overflow: hidden;
       font-family: "Arial", sans-serif;
       font-weight: 400;
-      font-size: calc(6em + (190px / 10) * 0.7);
+      font-size: calc(7.2em + (228px / 10) * 0.7); /* Increased from 6em */
       padding-top: 20px;
       color: #fff;
     }
@@ -123,60 +122,60 @@
     }
 
     .front {
-      transform: translateZ(435px);
+      transform: translateZ(522px); /* Adjusted for new size */
       display: none;
     }
 
     .back {
-      transform: translateZ(-435px) rotateY(180deg) scaleX(-1);
+      transform: translateZ(-522px) rotateY(180deg) scaleX(-1); /* Adjusted for new size */
     }
 
     .left {
-      transform: translateX(-435px) rotateY(-90deg) scaleX(-1);
+      transform: translateX(-522px) rotateY(-90deg) scaleX(-1); /* Adjusted for new size */
     }
 
     .right {
-      transform: translateX(435px) rotateY(90deg) scaleX(-1);
+      transform: translateX(522px) rotateY(90deg) scaleX(-1); /* Adjusted for new size */
     }
 
     .top {
-      transform: translateY(-435px) rotateX(90deg) scaleY(-1);
+      transform: translateY(-522px) rotateX(90deg) scaleY(-1); /* Adjusted for new size */
     }
 
     .bottom {
-      transform: translateY(-245px) rotateX(-90deg) scaleY(-1);
+      transform: translateY(-294px) rotateX(-90deg) scaleY(-1); /* Adjusted for new size */
     }
 
     .left p {
-      margin-left: 480px;
+      margin-left: 576px; /* Increased from 480px */
       animation: 200s linear infinite left;
     }
 
     .back p {
-      margin-left: -390px;
+      margin-left: -468px; /* Increased from -390px */
       animation: 200s linear infinite back;
     }
 
     .right p {
-      margin-left: -1260px;
+      margin-left: -1512px; /* Increased from -1260px */
       animation: 200s linear infinite right;
     }
 
     @keyframes left {
       100% {
-        margin-left: -54000px;
+        margin-left: -64800px; /* Increased from -54000px */
       }
     }
 
     @keyframes back {
-      100% {
-        margin-left: -54870px;
+ 100% {
+        margin-left: -65844px; /* Increased from -54870px */
       }
     }
 
     @keyframes right {
       100% {
-        margin-left: -55740px;
+        margin-left: -66888px; /* Increased from -55740px */
       }
     }
 
@@ -211,15 +210,15 @@
     }
 
     .container-reflect .back {
-      transform: translateZ(-435px) rotateY(180deg) scaleX(-1) scaleY(-1);
+      transform: translateZ(-522px) rotateY(180deg) scaleX(-1) scaleY(-1); /* Adjusted for new size */
     }
 
     .container-reflect .left {
-      transform: translateX(-435px) rotateY(-90deg) scaleX(-1) scaleY(-1);
+      transform: translateX(-522px) rotateY(-90deg) scaleX(-1) scaleY(-1); /* Adjusted for new size */
     }
 
     .container-reflect .right {
-      transform: translateX(435px) rotateY(90deg) scaleX(-1) scaleY(-1);
+      transform: translateX(522px) rotateY(90deg) scaleX(-1) scaleY(-1); /* Adjusted for new size */
     }
 
     .container-reflect p {
@@ -241,7 +240,7 @@
         transform: scale(1);
       }
       100% {
-        transform: scale(2.5);
+        transform: scale(3); /* Increased from 2.5 */
       }
     }
 
@@ -266,7 +265,7 @@
 </head>
 <body>
   <div class="container">
-    <div class="content" style="display:block;width:1000px;height:562px">
+    <div class="content" style="display:block;width:1200px;height:675px">
       <div class="container-full">
         <div class="animated hue"></div>
         <img class="backgroundImage" src='../src/assets/empty-room.jpg'>
@@ -297,7 +296,7 @@
 
   <script>
     // Poem text
-    const kiplingPoem = `<p>Hi, I am <span>Aanthoni</span>
+    const kiplingPoem = `<p>
       Hi, I am <span>Aanthoni |</span>
       嗨，我是<span>安东尼 |</span>
       Hola, soy <span>Aanthoni |</span>
@@ -306,7 +305,865 @@
       こんにちは、私は<span>アントニー |</span>です 
       Hallo, ich bin <span>Aanthoni |</span>
       नमस्ते, मैं <span>आंथोनी</span> हूं | 
-      Ciao, sono <span>Aanthoni |</span>
+      Ciao, sono <span>Aanthoni | </span>
+      안녕하세요, 저는 <span>앤토니</span>입니다 |
+      Olá, eu sou <span>Aanthoni |</span> 
+      مرحبا، أنا <span>آنتوني |</span>  
+      Merhaba, ben <span>Aanthoni |</span> 
+      สวัสดี, ฉันคือ <span>แอนโทนี |</span> 
+      Bună, eu sunt <span>Aanthoni |</span> 
+      Γεια, είμαι ο <span>Άντονι |</span> 
+      Hej, jag är <span>Aanthoni |</span> 
+      سلام، من <span>آنتونی</span> هستم  | 
+      Hei, minä olen <span>Aanthoni |</span>  
+      Hallo, ik ben <span>Aanthoni |</span> 
+      Cześć, jestem <span>Antoni |</span> 
+      Chào, tôi là <span>Aanthoni |</span> 
+      Hi, I am <span>Aanthoni |</span>
+      嗨，我是<span>安东尼 |</span>
+      Hola, soy <span>Aanthoni |</span>
+      Привет, я <span>Антони |</span>
+      Bonjour, je suis <span>Aanthoni |</span>
+      こんにちは、私は<span>アントニー |</span>です 
+      Hallo, ich bin <span>Aanthoni |</span>
+      नमस्ते, मैं <span>आंथोनी</span> हूं | 
+      Ciao, sono <span>Aanthoni | </span>
+      안녕하세요, 저는 <span>앤토니</span>입니다 |
+      Olá, eu sou <span>Aanthoni |</span> 
+      مرحبا، أنا <span>آنتوني |</span>  
+      Merhaba, ben <span>Aanthoni |</span> 
+      สวัสดี, ฉันคือ <span>แอนโทนี |</span> 
+      Bună, eu sunt <span>Aanthoni |</span> 
+      Γεια, είμαι ο <span>Άντονι |</span> 
+      Hej, jag är <span>Aanthoni |</span> 
+      سلام، من <span>آنتونی</span> هستم  | 
+      Hei, minä olen <span>Aanthoni |</span>  
+      Hallo, ik ben <span>Aanthoni |</span> 
+      Cześć, jestem <span>Antoni |</span> 
+      Chào, tôi là <span>Aanthoni |</span>  
+      Hi, I am <span>Aanthoni |</span>
+      嗨，我是<span>安东尼 |</span>
+      Hola, soy <span>Aanthoni |</span>
+      Привет, я <span>Антони |</span>
+      Bonjour, je suis <span>Aanthoni |</span>
+      こんにちは、私は<span>アントニー |</span>です 
+      Hallo, ich bin <span>Aanthoni |</span>
+      नमस्ते, मैं <span>आंथोनी</span> हूं | 
+      Ciao, sono <span>Aanthoni | </span>
+      안녕하세요, 저는 <span>앤토니</span>입니다 |
+      Olá, eu sou <span>Aanthoni |</span> 
+      مرحبا، أنا <span>آنتوني |</span>  
+      Merhaba, ben <span>Aanthoni |</span> 
+      สวัสดี, ฉันคือ <span>แอนโทนี |</span> 
+      Bună, eu sunt <span>Aanthoni |</span> 
+      Γεια, είμαι ο <span>Άντονι |</span> 
+      Hej, jag är <span>Aanthoni |</span> 
+      سلام، من <span>آنتونی</span> هستم  | 
+      Hei, minä olen <span>Aanthoni |</span>  
+      Hallo, ik ben <span>Aanthoni |</span> 
+      Cześć, jestem <span>Antoni |</span> 
+      Chào, tôi là <span>Aanthoni |</span> 
+      Hi, I am <span>Aanthoni |</span>
+      嗨，我是<span>安东尼 |</span>
+      Hola, soy <span>Aanthoni |</span>
+      Привет, я <span>Антони |</span>
+      Bonjour, je suis <span>Aanthoni |</span>
+      こんにちは、私は<span>アントニー |</span>です 
+      Hallo, ich bin <span>Aanthoni |</span>
+      नमस्ते, मैं <span>आंथोनी</span> हूं | 
+      Ciao, sono <span>Aanthoni | </span>
+      안녕하세요, 저는 <span>앤토니</span>입니다 |
+      Olá, eu sou <span>Aanthoni |</span> 
+      مرحبا، أنا <span>آنتوني |</span>  
+      Merhaba, ben <span>Aanthoni |</span> 
+      สวัสดี, ฉันคือ <span>แอนโทนี |</span> 
+      Bună, eu sunt <span>Aanthoni |</span> 
+      Γεια, είμαι ο <span>Άντονι |</span> 
+      Hej, jag är <span>Aanthoni |</span> 
+      سلام، من <span>آنتونی</span> هستم  | 
+      Hei, minä olen <span>Aanthoni |</span>  
+      Hallo, ik ben <span>Aanthoni |</span> 
+      Cześć, jestem <span>Antoni |</span> 
+      Chào, tôi là <span>Aanthoni |</span> 
+      Hi, I am <span>Aanthoni |</span>
+      嗨，我是<span>安东尼 |</span>
+      Hola, soy <span>Aanthoni |</span>
+      Привет, я <span>Антони |</span>
+      Bonjour, je suis <span>Aanthoni |</span>
+      こんにちは、私は<span>アントニー |</span>です 
+      Hallo, ich bin <span>Aanthoni |</span>
+      नमस्ते, मैं <span>आंथोनी</span> हूं | 
+      Ciao, sono <span>Aanthoni | </span>
+      안녕하세요, 저는 <span>앤토니</span>입니다 |
+      Olá, eu sou <span>Aanthoni |</span> 
+      مرحبا، أنا <span>آنتوني |</span>  
+      Merhaba, ben <span>Aanthoni |</span> 
+      สวัสดี, ฉันคือ <span>แอนโทนี |</span> 
+      Bună, eu sunt <span>Aanthoni |</span> 
+      Γεια, είμαι ο <span>Άντονι |</span> 
+      Hej, jag är <span>Aanthoni |</span> 
+      سلام، من <span>آنتونی</span> هستم  | 
+      Hei, minä olen <span>Aanthoni |</span>  
+      Hallo, ik ben <span>Aanthoni |</span> 
+      Cześć, jestem <span>Antoni |</span> 
+      Chào, tôi là <span>Aanthoni |</span> 
+      Hi, I am <span>Aanthoni |</span>
+      嗨，我是<span>安东尼 |</span>
+      Hola, soy <span>Aanthoni |</span>
+      Привет, я <span>Антони |</span>
+      Bonjour, je suis <span>Aanthoni |</span>
+      こんにちは、私は<span>アントニー |</span>です 
+      Hallo, ich bin <span>Aanthoni |</span>
+      नमस्ते, मैं <span>आंथोनी</span> हूं | 
+      Ciao, sono <span>Aanthoni | </span>
+      안녕하세요, 저는 <span>앤토니</span>입니다 |
+      Olá, eu sou <span>Aanthoni |</span> 
+      مرحبا، أنا <span>آنتوني |</span>  
+      Merhaba, ben <span>Aanthoni |</span> 
+      สวัสดี, ฉันคือ <span>แอนโทนี |</span> 
+      Bună, eu sunt <span>Aanthoni |</span> 
+      Γεια, είμαι ο <span>Άντονι |</span> 
+      Hej, jag är <span>Aanthoni |</span> 
+      سلام، من <span>آنتونی</span> هستم  | 
+      Hei, minä olen <span>Aanthoni |</span>  
+      Hallo, ik ben <span>Aanthoni |</span> 
+      Cześć, jestem <span>Antoni |</span> 
+      Chào, tôi là <span>Aanthoni |</span> 
+      Hi, I am <span>Aanthoni |</span>
+      嗨，我是<span>安东尼 |</span>
+      Hola, soy <span>Aanthoni |</span>
+      Привет, я <span>Антони |</span>
+      Bonjour, je suis <span>Aanthoni |</span>
+      こんにちは、私は<span>アントニー |</span>です 
+      Hallo, ich bin <span>Aanthoni |</span>
+      नमस्ते, मैं <span>आंथोनी</span> हूं | 
+      Ciao, sono <span>Aanthoni | </span>
+      안녕하세요, 저는 <span>앤토니</span>입니다 |
+      Olá, eu sou <span>Aanthoni |</span> 
+      مرحبا، أنا <span>آنتوني |</span>  
+      Merhaba, ben <span>Aanthoni |</span> 
+      สวัสดี, ฉันคือ <span>แอนโทนี |</span> 
+      Bună, eu sunt <span>Aanthoni |</span> 
+      Γεια, είμαι ο <span>Άντονι |</span> 
+      Hej, jag är <span>Aanthoni |</span> 
+      سلام، من <span>آنتونی</span> هستم  | 
+      Hei, minä olen <span>Aanthoni |</span>  
+      Hallo, ik ben <span>Aanthoni |</span> 
+      Cześć, jestem <span>Antoni |</span> 
+      Chào, tôi là <span>Aanthoni |</span> 
+      Hi, I am <span>Aanthoni |</span>
+      嗨，我是<span>安东尼 |</span>
+      Hola, soy <span>Aanthoni |</span>
+      Привет, я <span>Антони |</span>
+      Bonjour, je suis <span>Aanthoni |</span>
+      こんにちは、私は<span>アントニー |</span>です 
+      Hallo, ich bin <span>Aanthoni |</span>
+      नमस्ते, मैं <span>आंथोनी</span> हूं | 
+      Ciao, sono <span>Aanthoni | </span>
+      안녕하세요, 저는 <span>앤토니</span>입니다 |
+      Olá, eu sou <span>Aanthoni |</span> 
+      مرحبا، أنا <span>آنتوني |</span>  
+      Merhaba, ben <span>Aanthoni |</span> 
+      สวัสดี, ฉันคือ <span>แอนโทนี |</span> 
+      Bună, eu sunt <span>Aanthoni |</span> 
+      Γεια, είμαι ο <span>Άντονι |</span> 
+      Hej, jag är <span>Aanthoni |</span> 
+      سلام، من <span>آنتونی</span> هستم  | 
+      Hei, minä olen <span>Aanthoni |</span>  
+      Hallo, ik ben <span>Aanthoni |</span> 
+      Cześć, jestem <span>Antoni |</span> 
+      Chào, tôi là <span>Aanthoni |</span> 
+      Hi, I am <span>Aanthoni |</span>
+      嗨，我是<span>安东尼 |</span>
+      Hola, soy <span>Aanthoni |</span>
+      Привет, я <span>Антони |</span>
+      Bonjour, je suis <span>Aanthoni |</span>
+      こんにちは、私は<span>アントニー |</span>です 
+      Hallo, ich bin <span>Aanthoni |</span>
+      नमस्ते, मैं <span>आंथोनी</span> हूं | 
+      Ciao, sono <span>Aanthoni | </span>
+      안녕하세요, 저는 <span>앤토니</span>입니다 |
+      Olá, eu sou <span>Aanthoni |</span> 
+      مرحبا، أنا <span>آنتوني |</span>  
+      Merhaba, ben <span>Aanthoni |</span> 
+      สวัสดี, ฉันคือ <span>แอนโทนี |</span> 
+      Bună, eu sunt <span>Aanthoni |</span> 
+      Γεια, είμαι ο <span>Άντονι |</span> 
+      Hej, jag är <span>Aanthoni |</span> 
+      سلام، من <span>آنتونی</span> هستم  | 
+      Hei, minä olen <span>Aanthoni |</span>  
+      Hallo, ik ben <span>Aanthoni |</span> 
+      Cześć, jestem <span>Antoni |</span> 
+      Chào, tôi là <span>Aanthoni |</span> 
+      Hi, I am <span>Aanthoni |</span>
+      嗨，我是<span>安东尼 |</span>
+      Hola, soy <span>Aanthoni |</span>
+      Привет, я <span>Антони |</span>
+      Bonjour, je suis <span>Aanthoni |</span>
+      こんにちは、私は<span>アントニー |</span>です 
+      Hallo, ich bin <span>Aanthoni |</span>
+      नमस्ते, मैं <span>आंथोनी</span> हूं | 
+      Ciao, sono <span>Aanthoni | </span>
+      안녕하세요, 저는 <span>앤토니</span>입니다 |
+      Olá, eu sou <span>Aanthoni |</span> 
+      مرحبا، أنا <span>آنتوني |</span>  
+      Merhaba, ben <span>Aanthoni |</span> 
+      สวัสดี, ฉันคือ <span>แอนโทนี |</span> 
+      Bună, eu sunt <span>Aanthoni |</span> 
+      Γεια, είμαι ο <span>Άντονι |</span> 
+      Hej, jag är <span>Aanthoni |</span> 
+      سلام، من <span>آنتونی</span> هستم  | 
+      Hei, minä olen <span>Aanthoni |</span>  
+      Hallo, ik ben <span>Aanthoni |</span> 
+      Cześć, jestem <span>Antoni |</span> 
+      Chào, tôi là <span>Aanthoni |</span>  
+      Hi, I am <span>Aanthoni |</span>
+      嗨，我是<span>安东尼 |</span>
+      Hola, soy <span>Aanthoni |</span>
+      Привет, я <span>Антони |</span>
+      Bonjour, je suis <span>Aanthoni |</span>
+      こんにちは、私は<span>アントニー |</span>です 
+      Hallo, ich bin <span>Aanthoni |</span>
+      नमस्ते, मैं <span>आंथोनी</span> हूं | 
+      Ciao, sono <span>Aanthoni | </span>
+      안녕하세요, 저는 <span>앤토니</span>입니다 |
+      Olá, eu sou <span>Aanthoni |</span> 
+      مرحبا، أنا <span>آنتوني |</span>  
+      Merhaba, ben <span>Aanthoni |</span> 
+      สวัสดี, ฉันคือ <span>แอนโทนี |</span> 
+      Bună, eu sunt <span>Aanthoni |</span> 
+      Γεια, είμαι ο <span>Άντονι |</span> 
+      Hej, jag är <span>Aanthoni |</span> 
+      سلام، من <span>آنتونی</span> هستم  | 
+      Hei, minä olen <span>Aanthoni |</span>  
+      Hallo, ik ben <span>Aanthoni |</span> 
+      Cześć, jestem <span>Antoni |</span> 
+      Chào, tôi là <span>Aanthoni |</span> 
+      Hi, I am <span>Aanthoni |</span>
+      嗨，我是<span>安东尼 |</span>
+      Hola, soy <span>Aanthoni |</span>
+      Привет, я <span>Антони |</span>
+      Bonjour, je suis <span>Aanthoni |</span>
+      こんにちは、私は<span>アントニー |</span>です 
+      Hallo, ich bin <span>Aanthoni |</span>
+      नमस्ते, मैं <span>आंथोनी</span> हूं | 
+      Ciao, sono <span>Aanthoni | </span>
+      안녕하세요, 저는 <span>앤토니</span>입니다 |
+      Olá, eu sou <span>Aanthoni |</span> 
+      مرحبا، أنا <span>آنتوني |</span>  
+      Merhaba, ben <span>Aanthoni |</span> 
+      สวัสดี, ฉันคือ <span>แอนโทนี |</span> 
+      Bună, eu sunt <span>Aanthoni |</span> 
+      Γεια, είμαι ο <span>Άντονι |</span> 
+      Hej, jag är <span>Aanthoni |</span> 
+      سلام، من <span>آنتونی</span> هستم  | 
+      Hei, minä olen <span>Aanthoni |</span>  
+      Hallo, ik ben <span>Aanthoni |</span> 
+      Cześć, jestem <span>Antoni |</span> 
+      Chào, tôi là <span>Aanthoni |</span> 
+      Hi, I am <span>Aanthoni |</span>
+      嗨，我是<span>安东尼 |</span>
+      Hola, soy <span>Aanthoni |</span>
+      Привет, я <span>Антони |</span>
+      Bonjour, je suis <span>Aanthoni |</span>
+      こんにちは、私は<span>アントニー |</span>です 
+      Hallo, ich bin <span>Aanthoni |</span>
+      नमस्ते, मैं <span>आंथोनी</span> हूं | 
+      Ciao, sono <span>Aanthoni | </span>
+      안녕하세요, 저는 <span>앤토니</span>입니다 |
+      Olá, eu sou <span>Aanthoni |</span> 
+      مرحبا، أنا <span>آنتوني |</span>  
+      Merhaba, ben <span>Aanthoni |</span> 
+      สวัสดี, ฉันคือ <span>แอนโทนี |</span> 
+      Bună, eu sunt <span>Aanthoni |</span> 
+      Γεια, είμαι ο <span>Άντονι |</span> 
+      Hej, jag är <span>Aanthoni |</span> 
+      سلام، من <span>آنتونی</span> هستم  | 
+      Hei, minä olen <span>Aanthoni |</span>  
+      Hallo, ik ben <span>Aanthoni |</span> 
+      Cześć, jestem <span>Antoni |</span> 
+      Chào, tôi là <span>Aanthoni |</span> 
+      Hi, I am <span>Aanthoni |</span>
+      嗨，我是<span>安东尼 |</span>
+      Hola, soy <span>Aanthoni |</span>
+      Привет, я <span>Антони |</span>
+      Bonjour, je suis <span>Aanthoni |</span>
+      こんにちは、私は<span>アントニー |</span>です 
+      Hallo, ich bin <span>Aanthoni |</span>
+      नमस्ते, मैं <span>आंथोनी</span> हूं | 
+      Ciao, sono <span>Aanthoni | </span>
+      안녕하세요, 저는 <span>앤토니</span>입니다 |
+      Olá, eu sou <span>Aanthoni |</span> 
+      مرحبا، أنا <span>آنتوني |</span>  
+      Merhaba, ben <span>Aanthoni |</span> 
+      สวัสดี, ฉันคือ <span>แอนโทนี |</span> 
+      Bună, eu sunt <span>Aanthoni |</span> 
+      Γεια, είμαι ο <span>Άντονι |</span> 
+      Hej, jag är <span>Aanthoni |</span> 
+      سلام، من <span>آنتونی</span> هستم  | 
+      Hei, minä olen <span>Aanthoni |</span>  
+      Hallo, ik ben <span>Aanthoni |</span> 
+      Cześć, jestem <span>Antoni |</span> 
+      Chào, tôi là <span>Aanthoni |</span> 
+      Hi, I am <span>Aanthoni |</span>
+      嗨，我是<span>安东尼 |</span>
+      Hola, soy <span>Aanthoni |</span>
+      Привет, я <span>Антони |</span>
+      Bonjour, je suis <span>Aanthoni |</span>
+      こんにちは、私は<span>アントニー |</span>です 
+      Hallo, ich bin <span>Aanthoni |</span>
+      नमस्ते, मैं <span>आंथोनी</span> हूं | 
+      Ciao, sono <span>Aanthoni | </span>
+      안녕하세요, 저는 <span>앤토니</span>입니다 |
+      Olá, eu sou <span>Aanthoni |</span> 
+      مرحبا، أنا <span>آنتوني |</span>  
+      Merhaba, ben <span>Aanthoni |</span> 
+      สวัสดี, ฉันคือ <span>แอนโทนี |</span> 
+      Bună, eu sunt <span>Aanthoni |</span> 
+      Γεια, είμαι ο <span>Άντονι |</span> 
+      Hej, jag är <span>Aanthoni |</span> 
+      سلام، من <span>آنتونی</span> هستم  | 
+      Hei, minä olen <span>Aanthoni |</span>  
+      Hallo, ik ben <span>Aanthoni |</span> 
+      Cześć, jestem <span>Antoni |</span> 
+      Chào, tôi là <span>Aanthoni |</span> 
+      Hi, I am <span>Aanthoni |</span>
+      嗨，我是<span>安东尼 |</span>
+      Hola, soy <span>Aanthoni |</span>
+      Привет, я <span>Антони |</span>
+      Bonjour, je suis <span>Aanthoni |</span>
+      こんにちは、私は<span>アントニー |</span>です 
+      Hallo, ich bin <span>Aanthoni |</span>
+      नमस्ते, मैं <span>आंथोनी</span> हूं | 
+      Ciao, sono <span>Aanthoni | </span>
+      안녕하세요, 저는 <span>앤토니</span>입니다 |
+      Olá, eu sou <span>Aanthoni |</span> 
+      مرحبا، أنا <span>آنتوني |</span>  
+      Merhaba, ben <span>Aanthoni |</span> 
+      สวัสดี, ฉันคือ <span>แอนโทนี |</span> 
+      Bună, eu sunt <span>Aanthoni |</span> 
+      Γεια, είμαι ο <span>Άντονι |</span> 
+      Hej, jag är <span>Aanthoni |</span> 
+      سلام، من <span>آنتونی</span> هستم  | 
+      Hei, minä olen <span>Aanthoni |</span>  
+      Hallo, ik ben <span>Aanthoni |</span> 
+      Cześć, jestem <span>Antoni |</span> 
+      Chào, tôi là <span>Aanthoni |</span> 
+      Hi, I am <span>Aanthoni |</span>
+      嗨，我是<span>安东尼 |</span>
+      Hola, soy <span>Aanthoni |</span>
+      Привет, я <span>Антони |</span>
+      Bonjour, je suis <span>Aanthoni |</span>
+      こんにちは、私は<span>アントニー |</span>です 
+      Hallo, ich bin <span>Aanthoni |</span>
+      नमस्ते, मैं <span>आंथोनी</span> हूं | 
+      Ciao, sono <span>Aanthoni | </span>
+      안녕하세요, 저는 <span>앤토니</span>입니다 |
+      Olá, eu sou <span>Aanthoni |</span> 
+      مرحبا، أنا <span>آنتوني |</span>  
+      Merhaba, ben <span>Aanthoni |</span> 
+      สวัสดี, ฉันคือ <span>แอนโทนี |</span> 
+      Bună, eu sunt <span>Aanthoni |</span> 
+      Γεια, είμαι ο <span>Άντονι |</span> 
+      Hej, jag är <span>Aanthoni |</span> 
+      سلام، من <span>آنتونی</span> هستم  | 
+      Hei, minä olen <span>Aanthoni |</span>  
+      Hallo, ik ben <span>Aanthoni |</span> 
+      Cześć, jestem <span>Antoni |</span> 
+      Chào, tôi là <span>Aanthoni |</span> 
+      Hi, I am <span>Aanthoni |</span>
+      嗨，我是<span>安东尼 |</span>
+      Hola, soy <span>Aanthoni |</span>
+      Привет, я <span>Антони |</span>
+      Bonjour, je suis <span>Aanthoni |</span>
+      こんにちは、私は<span>アントニー |</span>です 
+      Hallo, ich bin <span>Aanthoni |</span>
+      नमस्ते, मैं <span>आंथोनी</span> हूं | 
+      Ciao, sono <span>Aanthoni | </span>
+      안녕하세요, 저는 <span>앤토니</span>입니다 |
+      Olá, eu sou <span>Aanthoni |</span> 
+      مرحبا، أنا <span>آنتوني |</span>  
+      Merhaba, ben <span>Aanthoni |</span> 
+      สวัสดี, ฉันคือ <span>แอนโทนี |</span> 
+      Bună, eu sunt <span>Aanthoni |</span> 
+      Γεια, είμαι ο <span>Άντονι |</span> 
+      Hej, jag är <span>Aanthoni |</span> 
+      سلام، من <span>آنتونی</span> هستم  | 
+      Hei, minä olen <span>Aanthoni |</span>  
+      Hallo, ik ben <span>Aanthoni |</span> 
+      Cześć, jestem <span>Antoni |</span> 
+      Chào, tôi là <span>Aanthoni |</span>  
+      Hi, I am <span>Aanthoni |</span>
+      嗨，我是<span>安东尼 |</span>
+      Hola, soy <span>Aanthoni |</span>
+      Привет, я <span>Антони |</span>
+      Bonjour, je suis <span>Aanthoni |</span>
+      こんにちは、私は<span>アントニー |</span>です 
+      Hallo, ich bin <span>Aanthoni |</span>
+      नमस्ते, मैं <span>आंथोनी</span> हूं | 
+      Ciao, sono <span>Aanthoni | </span>
+      안녕하세요, 저는 <span>앤토니</span>입니다 |
+      Olá, eu sou <span>Aanthoni |</span> 
+      مرحبا، أنا <span>آنتوني |</span>  
+      Merhaba, ben <span>Aanthoni |</span> 
+      สวัสดี, ฉันคือ <span>แอนโทนี |</span> 
+      Bună, eu sunt <span>Aanthoni |</span> 
+      Γεια, είμαι ο <span>Άντονι |</span> 
+      Hej, jag är <span>Aanthoni |</span> 
+      سلام، من <span>آنتونی</span> هستم  | 
+      Hei, minä olen <span>Aanthoni |</span>  
+      Hallo, ik ben <span>Aanthoni |</span> 
+      Cześć, jestem <span>Antoni |</span> 
+      Chào, tôi là <span>Aanthoni |</span> 
+      Hi, I am <span>Aanthoni |</span>
+      嗨，我是<span>安东尼 |</span>
+      Hola, soy <span>Aanthoni |</span>
+      Привет, я <span>Антони |</span>
+      Bonjour, je suis <span>Aanthoni |</span>
+      こんにちは、私は<span>アントニー |</span>です 
+      Hallo, ich bin <span>Aanthoni |</span>
+      नमस्ते, मैं <span>आंथोनी</span> हूं | 
+      Ciao, sono <span>Aanthoni | </span>
+      안녕하세요, 저는 <span>앤토니</span>입니다 |
+      Olá, eu sou <span>Aanthoni |</span> 
+      مرحبا، أنا <span>آنتوني |</span>  
+      Merhaba, ben <span>Aanthoni |</span> 
+      สวัสดี, ฉันคือ <span>แอนโทนี |</span> 
+      Bună, eu sunt <span>Aanthoni |</span> 
+      Γεια, είμαι ο <span>Άντονι |</span> 
+      Hej, jag är <span>Aanthoni |</span> 
+      سلام، من <span>آنتونی</span> هستم  | 
+      Hei, minä olen <span>Aanthoni |</span>  
+      Hallo, ik ben <span>Aanthoni |</span> 
+      Cześć, jestem <span>Antoni |</span> 
+      Chào, tôi là <span>Aanthoni |</span> 
+      Hi, I am <span>Aanthoni |</span>
+      嗨，我是<span>安东尼 |</span>
+      Hola, soy <span>Aanthoni |</span>
+      Привет, я <span>Антони |</span>
+      Bonjour, je suis <span>Aanthoni |</span>
+      こんにちは、私は<span>アントニー |</span>です 
+      Hallo, ich bin <span>Aanthoni |</span>
+      नमस्ते, मैं <span>आंथोनी</span> हूं | 
+      Ciao, sono <span>Aanthoni | </span>
+      안녕하세요, 저는 <span>앤토니</span>입니다 |
+      Olá, eu sou <span>Aanthoni |</span> 
+      مرحبا، أنا <span>آنتوني |</span>  
+      Merhaba, ben <span>Aanthoni |</span> 
+      สวัสดี, ฉันคือ <span>แอนโทนี |</span> 
+      Bună, eu sunt <span>Aanthoni |</span> 
+      Γεια, είμαι ο <span>Άντονι |</span> 
+      Hej, jag är <span>Aanthoni |</span> 
+      سلام، من <span>آنتونی</span> هستم  | 
+      Hei, minä olen <span>Aanthoni |</span>  
+      Hallo, ik ben <span>Aanthoni |</span> 
+      Cześć, jestem <span>Antoni |</span> 
+      Chào, tôi là <span>Aanthoni |</span> 
+      Hi, I am <span>Aanthoni |</span>
+      嗨，我是<span>安东尼 |</span>
+      Hola, soy <span>Aanthoni |</span>
+      Привет, я <span>Антони |</span>
+      Bonjour, je suis <span>Aanthoni |</span>
+      こんにちは、私は<span>アントニー |</span>です 
+      Hallo, ich bin <span>Aanthoni |</span>
+      नमस्ते, मैं <span>आंथोनी</span> हूं | 
+      Ciao, sono <span>Aanthoni | </span>
+      안녕하세요, 저는 <span>앤토니</span>입니다 |
+      Olá, eu sou <span>Aanthoni |</span> 
+      مرحبا، أنا <span>آنتوني |</span>  
+      Merhaba, ben <span>Aanthoni |</span> 
+      สวัสดี, ฉันคือ <span>แอนโทนี |</span> 
+      Bună, eu sunt <span>Aanthoni |</span> 
+      Γεια, είμαι ο <span>Άντονι |</span> 
+      Hej, jag är <span>Aanthoni |</span> 
+      سلام، من <span>آنتونی</span> هستم  | 
+      Hei, minä olen <span>Aanthoni |</span>  
+      Hallo, ik ben <span>Aanthoni |</span> 
+      Cześć, jestem <span>Antoni |</span> 
+      Chào, tôi là <span>Aanthoni |</span> 
+      Hi, I am <span>Aanthoni |</span>
+      嗨，我是<span>安东尼 |</span>
+      Hola, soy <span>Aanthoni |</span>
+      Привет, я <span>Антони |</span>
+      Bonjour, je suis <span>Aanthoni |</span>
+      こんにちは、私は<span>アントニー |</span>です 
+      Hallo, ich bin <span>Aanthoni |</span>
+      नमस्ते, मैं <span>आंथोनी</span> हूं | 
+      Ciao, sono <span>Aanthoni | </span>
+      안녕하세요, 저는 <span>앤토니</span>입니다 |
+      Olá, eu sou <span>Aanthoni |</span> 
+      مرحبا، أنا <span>آنتوني |</span>  
+      Merhaba, ben <span>Aanthoni |</span> 
+      สวัสดี, ฉันคือ <span>แอนโทนี |</span> 
+      Bună, eu sunt <span>Aanthoni |</span> 
+      Γεια, είμαι ο <span>Άντονι |</span> 
+      Hej, jag är <span>Aanthoni |</span> 
+      سلام، من <span>آنتونی</span> هستم  | 
+      Hei, minä olen <span>Aanthoni |</span>  
+      Hallo, ik ben <span>Aanthoni |</span> 
+      Cześć, jestem <span>Antoni |</span> 
+      Chào, tôi là <span>Aanthoni |</span> 
+      Hi, I am <span>Aanthoni |</span>
+      嗨，我是<span>安东尼 |</span>
+      Hola, soy <span>Aanthoni |</span>
+      Привет, я <span>Антони |</span>
+      Bonjour, je suis <span>Aanthoni |</span>
+      こんにちは、私は<span>アントニー |</span>です 
+      Hallo, ich bin <span>Aanthoni |</span>
+      नमस्ते, मैं <span>आंथोनी</span> हूं | 
+      Ciao, sono <span>Aanthoni | </span>
+      안녕하세요, 저는 <span>앤토니</span>입니다 |
+      Olá, eu sou <span>Aanthoni |</span> 
+      مرحبا، أنا <span>آنتوني |</span>  
+      Merhaba, ben <span>Aanthoni |</span> 
+      สวัสดี, ฉันคือ <span>แอนโทนี |</span> 
+      Bună, eu sunt <span>Aanthoni |</span> 
+      Γεια, είμαι ο <span>Άντονι |</span> 
+      Hej, jag är <span>Aanthoni |</span> 
+      سلام، من <span>آنتونی</span> هستم  | 
+      Hei, minä olen <span>Aanthoni |</span>  
+      Hallo, ik ben <span>Aanthoni |</span> 
+      Cześć, jestem <span>Antoni |</span> 
+      Chào, tôi là <span>Aanthoni |</span> 
+      Hi, I am <span>Aanthoni |</span>
+      嗨，我是<span>安东尼 |</span>
+      Hola, soy <span>Aanthoni |</span>
+      Привет, я <span>Антони |</span>
+      Bonjour, je suis <span>Aanthoni |</span>
+      こんにちは、私は<span>アントニー |</span>です 
+      Hallo, ich bin <span>Aanthoni |</span>
+      नमस्ते, मैं <span>आंथोनी</span> हूं | 
+      Ciao, sono <span>Aanthoni | </span>
+      안녕하세요, 저는 <span>앤토니</span>입니다 |
+      Olá, eu sou <span>Aanthoni |</span> 
+      مرحبا، أنا <span>آنتوني |</span>  
+      Merhaba, ben <span>Aanthoni |</span> 
+      สวัสดี, ฉันคือ <span>แอนโทนี |</span> 
+      Bună, eu sunt <span>Aanthoni |</span> 
+      Γεια, είμαι ο <span>Άντονι |</span> 
+      Hej, jag är <span>Aanthoni |</span> 
+      سلام، من <span>آنتونی</span> هستم  | 
+      Hei, minä olen <span>Aanthoni |</span>  
+      Hallo, ik ben <span>Aanthoni |</span> 
+      Cześć, jestem <span>Antoni |</span> 
+      Chào, tôi là <span>Aanthoni |</span> 
+      Hi, I am <span>Aanthoni |</span>
+      嗨，我是<span>安东尼 |</span>
+      Hola, soy <span>Aanthoni |</span>
+      Привет, я <span>Антони |</span>
+      Bonjour, je suis <span>Aanthoni |</span>
+      こんにちは、私は<span>アントニー |</span>です 
+      Hallo, ich bin <span>Aanthoni |</span>
+      नमस्ते, मैं <span>आंथोनी</span> हूं | 
+      Ciao, sono <span>Aanthoni | </span>
+      안녕하세요, 저는 <span>앤토니</span>입니다 |
+      Olá, eu sou <span>Aanthoni |</span> 
+      مرحبا، أنا <span>آنتوني |</span>  
+      Merhaba, ben <span>Aanthoni |</span> 
+      สวัสดี, ฉันคือ <span>แอนโทนี |</span> 
+      Bună, eu sunt <span>Aanthoni |</span> 
+      Γεια, είμαι ο <span>Άντονι |</span> 
+      Hej, jag är <span>Aanthoni |</span> 
+      سلام، من <span>آنتونی</span> هستم  | 
+      Hei, minä olen <span>Aanthoni |</span>  
+      Hallo, ik ben <span>Aanthoni |</span> 
+      Cześć, jestem <span>Antoni |</span> 
+      Chào, tôi là <span>Aanthoni |</span>  
+      Hi, I am <span>Aanthoni |</span>
+      嗨，我是<span>安东尼 |</span>
+      Hola, soy <span>Aanthoni |</span>
+      Привет, я <span>Антони |</span>
+      Bonjour, je suis <span>Aanthoni |</span>
+      こんにちは、私は<span>アントニー |</span>です 
+      Hallo, ich bin <span>Aanthoni |</span>
+      नमस्ते, मैं <span>आंथोनी</span> हूं | 
+      Ciao, sono <span>Aanthoni | </span>
+      안녕하세요, 저는 <span>앤토니</span>입니다 |
+      Olá, eu sou <span>Aanthoni |</span> 
+      مرحبا، أنا <span>آنتوني |</span>  
+      Merhaba, ben <span>Aanthoni |</span> 
+      สวัสดี, ฉันคือ <span>แอนโทนี |</span> 
+      Bună, eu sunt <span>Aanthoni |</span> 
+      Γεια, είμαι ο <span>Άντονι |</span> 
+      Hej, jag är <span>Aanthoni |</span> 
+      سلام، من <span>آنتونی</span> هستم  | 
+      Hei, minä olen <span>Aanthoni |</span>  
+      Hallo, ik ben <span>Aanthoni |</span> 
+      Cześć, jestem <span>Antoni |</span> 
+      Chào, tôi là <span>Aanthoni |</span> 
+      Hi, I am <span>Aanthoni |</span>
+      嗨，我是<span>安东尼 |</span>
+      Hola, soy <span>Aanthoni |</span>
+      Привет, я <span>Антони |</span>
+      Bonjour, je suis <span>Aanthoni |</span>
+      こんにちは、私は<span>アントニー |</span>です 
+      Hallo, ich bin <span>Aanthoni |</span>
+      नमस्ते, मैं <span>आंथोनी</span> हूं | 
+      Ciao, sono <span>Aanthoni | </span>
+      안녕하세요, 저는 <span>앤토니</span>입니다 |
+      Olá, eu sou <span>Aanthoni |</span> 
+      مرحبا، أنا <span>آنتوني |</span>  
+      Merhaba, ben <span>Aanthoni |</span> 
+      สวัสดี, ฉันคือ <span>แอนโทนี |</span> 
+      Bună, eu sunt <span>Aanthoni |</span> 
+      Γεια, είμαι ο <span>Άντονι |</span> 
+      Hej, jag är <span>Aanthoni |</span> 
+      سلام، من <span>آنتونی</span> هستم  | 
+      Hei, minä olen <span>Aanthoni |</span>  
+      Hallo, ik ben <span>Aanthoni |</span> 
+      Cześć, jestem <span>Antoni |</span> 
+      Chào, tôi là <span>Aanthoni |</span> 
+      Hi, I am <span>Aanthoni |</span>
+      嗨，我是<span>安东尼 |</span>
+      Hola, soy <span>Aanthoni |</span>
+      Привет, я <span>Антони |</span>
+      Bonjour, je suis <span>Aanthoni |</span>
+      こんにちは、私は<span>アントニー |</span>です 
+      Hallo, ich bin <span>Aanthoni |</span>
+      नमस्ते, मैं <span>आंथोनी</span> हूं | 
+      Ciao, sono <span>Aanthoni | </span>
+      안녕하세요, 저는 <span>앤토니</span>입니다 |
+      Olá, eu sou <span>Aanthoni |</span> 
+      مرحبا، أنا <span>آنتوني |</span>  
+      Merhaba, ben <span>Aanthoni |</span> 
+      สวัสดี, ฉันคือ <span>แอนโทนี |</span> 
+      Bună, eu sunt <span>Aanthoni |</span> 
+      Γεια, είμαι ο <span>Άντονι |</span> 
+      Hej, jag är <span>Aanthoni |</span> 
+      سلام، من <span>آنتونی</span> هستم  | 
+      Hei, minä olen <span>Aanthoni |</span>  
+      Hallo, ik ben <span>Aanthoni |</span> 
+      Cześć, jestem <span>Antoni |</span> 
+      Chào, tôi là <span>Aanthoni |</span> 
+      Hi, I am <span>Aanthoni |</span>
+      嗨，我是<span>安东尼 |</span>
+      Hola, soy <span>Aanthoni |</span>
+      Привет, я <span>Антони |</span>
+      Bonjour, je suis <span>Aanthoni |</span>
+      こんにちは、私は<span>アントニー |</span>です 
+      Hallo, ich bin <span>Aanthoni |</span>
+      नमस्ते, मैं <span>आंथोनी</span> हूं | 
+      Ciao, sono <span>Aanthoni | </span>
+      안녕하세요, 저는 <span>앤토니</span>입니다 |
+      Olá, eu sou <span>Aanthoni |</span> 
+      مرحبا، أنا <span>آنتوني |</span>  
+      Merhaba, ben <span>Aanthoni |</span> 
+      สวัสดี, ฉันคือ <span>แอนโทนี |</span> 
+      Bună, eu sunt <span>Aanthoni |</span> 
+      Γεια, είμαι ο <span>Άντονι |</span> 
+      Hej, jag är <span>Aanthoni |</span> 
+      سلام، من <span>آنتونی</span> هستم  | 
+      Hei, minä olen <span>Aanthoni |</span>  
+      Hallo, ik ben <span>Aanthoni |</span> 
+      Cześć, jestem <span>Antoni |</span> 
+      Chào, tôi là <span>Aanthoni |</span> 
+      Hi, I am <span>Aanthoni |</span>
+      嗨，我是<span>安东尼 |</span>
+      Hola, soy <span>Aanthoni |</span>
+      Привет, я <span>Антони |</span>
+      Bonjour, je suis <span>Aanthoni |</span>
+      こんにちは、私は<span>アントニー |</span>です 
+      Hallo, ich bin <span>Aanthoni |</span>
+      नमस्ते, मैं <span>आंथोनी</span> हूं | 
+      Ciao, sono <span>Aanthoni | </span>
+      안녕하세요, 저는 <span>앤토니</span>입니다 |
+      Olá, eu sou <span>Aanthoni |</span> 
+      مرحبا، أنا <span>آنتوني |</span>  
+      Merhaba, ben <span>Aanthoni |</span> 
+      สวัสดี, ฉันคือ <span>แอนโทนี |</span> 
+      Bună, eu sunt <span>Aanthoni |</span> 
+      Γεια, είμαι ο <span>Άντονι |</span> 
+      Hej, jag är <span>Aanthoni |</span> 
+      سلام، من <span>آنتونی</span> هستم  | 
+      Hei, minä olen <span>Aanthoni |</span>  
+      Hallo, ik ben <span>Aanthoni |</span> 
+      Cześć, jestem <span>Antoni |</span> 
+      Chào, tôi là <span>Aanthoni |</span> 
+      Hi, I am <span>Aanthoni |</span>
+      嗨，我是<span>安东尼 |</span>
+      Hola, soy <span>Aanthoni |</span>
+      Привет, я <span>Антони |</span>
+      Bonjour, je suis <span>Aanthoni |</span>
+      こんにちは、私は<span>アントニー |</span>です 
+      Hallo, ich bin <span>Aanthoni |</span>
+      नमस्ते, मैं <span>आंथोनी</span> हूं | 
+      Ciao, sono <span>Aanthoni | </span>
+      안녕하세요, 저는 <span>앤토니</span>입니다 |
+      Olá, eu sou <span>Aanthoni |</span> 
+      مرحبا، أنا <span>آنتوني |</span>  
+      Merhaba, ben <span>Aanthoni |</span> 
+      สวัสดี, ฉันคือ <span>แอนโทนี |</span> 
+      Bună, eu sunt <span>Aanthoni |</span> 
+      Γεια, είμαι ο <span>Άντονι |</span> 
+      Hej, jag är <span>Aanthoni |</span> 
+      سلام، من <span>آنتونی</span> هستم  | 
+      Hei, minä olen <span>Aanthoni |</span>  
+      Hallo, ik ben <span>Aanthoni |</span> 
+      Cześć, jestem <span>Antoni |</span> 
+      Chào, tôi là <span>Aanthoni |</span> 
+      Hi, I am <span>Aanthoni |</span>
+      嗨，我是<span>安东尼 |</span>
+      Hola, soy <span>Aanthoni |</span>
+      Привет, я <span>Антони |</span>
+      Bonjour, je suis <span>Aanthoni |</span>
+      こんにちは、私は<span>アントニー |</span>です 
+      Hallo, ich bin <span>Aanthoni |</span>
+      नमस्ते, मैं <span>आंथोनी</span> हूं | 
+      Ciao, sono <span>Aanthoni | </span>
+      안녕하세요, 저는 <span>앤토니</span>입니다 |
+      Olá, eu sou <span>Aanthoni |</span> 
+      مرحبا، أنا <span>آنتوني |</span>  
+      Merhaba, ben <span>Aanthoni |</span> 
+      สวัสดี, ฉันคือ <span>แอนโทนี |</span> 
+      Bună, eu sunt <span>Aanthoni |</span> 
+      Γεια, είμαι ο <span>Άντονι |</span> 
+      Hej, jag är <span>Aanthoni |</span> 
+      سلام، من <span>آنتونی</span> هستم  | 
+      Hei, minä olen <span>Aanthoni |</span>  
+      Hallo, ik ben <span>Aanthoni |</span> 
+      Cześć, jestem <span>Antoni |</span> 
+      Chào, tôi là <span>Aanthoni |</span> 
+      Hi, I am <span>Aanthoni |</span>
+      嗨，我是<span>安东尼 |</span>
+      Hola, soy <span>Aanthoni |</span>
+      Привет, я <span>Антони |</span>
+      Bonjour, je suis <span>Aanthoni |</span>
+      こんにちは、私は<span>アントニー |</span>です 
+      Hallo, ich bin <span>Aanthoni |</span>
+      नमस्ते, मैं <span>आंथोनी</span> हूं | 
+      Ciao, sono <span>Aanthoni | </span>
+      안녕하세요, 저는 <span>앤토니</span>입니다 |
+      Olá, eu sou <span>Aanthoni |</span> 
+      مرحبا، أنا <span>آنتوني |</span>  
+      Merhaba, ben <span>Aanthoni |</span> 
+      สวัสดี, ฉันคือ <span>แอนโทนี |</span> 
+      Bună, eu sunt <span>Aanthoni |</span> 
+      Γεια, είμαι ο <span>Άντονι |</span> 
+      Hej, jag är <span>Aanthoni |</span> 
+      سلام، من <span>آنتونی</span> هستم  | 
+      Hei, minä olen <span>Aanthoni |</span>  
+      Hallo, ik ben <span>Aanthoni |</span> 
+      Cześć, jestem <span>Antoni |</span> 
+      Chào, tôi là <span>Aanthoni |</span>  
+      Hi, I am <span>Aanthoni |</span>
+      嗨，我是<span>安东尼 |</span>
+      Hola, soy <span>Aanthoni |</span>
+      Привет, я <span>Антони |</span>
+      Bonjour, je suis <span>Aanthoni |</span>
+      こんにちは、私は<span>アントニー |</span>です 
+      Hallo, ich bin <span>Aanthoni |</span>
+      नमस्ते, मैं <span>आंथोनी</span> हूं | 
+      Ciao, sono <span>Aanthoni | </span>
+      안녕하세요, 저는 <span>앤토니</span>입니다 |
+      Olá, eu sou <span>Aanthoni |</span> 
+      مرحبا، أنا <span>آنتوني |</span>  
+      Merhaba, ben <span>Aanthoni |</span> 
+      สวัสดี, ฉันคือ <span>แอนโทนี |</span> 
+      Bună, eu sunt <span>Aanthoni |</span> 
+      Γεια, είμαι ο <span>Άντονι |</span> 
+      Hej, jag är <span>Aanthoni |</span> 
+      سلام، من <span>آنتونی</span> هستم  | 
+      Hei, minä olen <span>Aanthoni |</span>  
+      Hallo, ik ben <span>Aanthoni |</span> 
+      Cześć, jestem <span>Antoni |</span> 
+      Chào, tôi là <span>Aanthoni |</span> 
+      Hi, I am <span>Aanthoni |</span>
+      嗨，我是<span>安东尼 |</span>
+      Hola, soy <span>Aanthoni |</span>
+      Привет, я <span>Антони |</span>
+      Bonjour, je suis <span>Aanthoni |</span>
+      こんにちは、私は<span>アントニー |</span>です 
+      Hallo, ich bin <span>Aanthoni |</span>
+      नमस्ते, मैं <span>आंथोनी</span> हूं | 
+      Ciao, sono <span>Aanthoni | </span>
+      안녕하세요, 저는 <span>앤토니</span>입니다 |
+      Olá, eu sou <span>Aanthoni |</span> 
+      مرحبا، أنا <span>آنتوني |</span>  
+      Merhaba, ben <span>Aanthoni |</span> 
+      สวัสดี, ฉันคือ <span>แอนโทนี |</span> 
+      Bună, eu sunt <span>Aanthoni |</span> 
+      Γεια, είμαι ο <span>Άντονι |</span> 
+      Hej, jag är <span>Aanthoni |</span> 
+      سلام، من <span>آنتونی</span> هستم  | 
+      Hei, minä olen <span>Aanthoni |</span>  
+      Hallo, ik ben <span>Aanthoni |</span> 
+      Cześć, jestem <span>Antoni |</span> 
+      Chào, tôi là <span>Aanthoni |</span> 
+      Hi, I am <span>Aanthoni |</span>
+      嗨，我是<span>安东尼 |</span>
+      Hola, soy <span>Aanthoni |</span>
+      Привет, я <span>Антони |</span>
+      Bonjour, je suis <span>Aanthoni |</span>
+      こんにちは、私は<span>アントニー |</span>です 
+      Hallo, ich bin <span>Aanthoni |</span>
+      नमस्ते, मैं <span>आंथोनी</span> हूं | 
+      Ciao, sono <span>Aanthoni | </span>
+      안녕하세요, 저는 <span>앤토니</span>입니다 |
+      Olá, eu sou <span>Aanthoni |</span> 
+      مرحبا، أنا <span>آنتوني |</span>  
+      Merhaba, ben <span>Aanthoni |</span> 
+      สวัสดี, ฉันคือ <span>แอนโทนี |</span> 
+      Bună, eu sunt <span>Aanthoni |</span> 
+      Γεια, είμαι ο <span>Άντονι |</span> 
+      Hej, jag är <span>Aanthoni |</span> 
+      سلام، من <span>آنتونی</span> هستم  | 
+      Hei, minä olen <span>Aanthoni |</span>  
+      Hallo, ik ben <span>Aanthoni |</span> 
+      Cześć, jestem <span>Antoni |</span> 
+      Chào, tôi là <span>Aanthoni |</span> 
+      Hi, I am <span>Aanthoni |</span>
+      嗨，我是<span>安东尼 |</span>
+      Hola, soy <span>Aanthoni |</span>
+      Привет, я <span>Антони |</span>
+      Bonjour, je suis <span>Aanthoni |</span>
+      こんにちは、私は<span>アントニー |</span>です 
+      Hallo, ich bin <span>Aanthoni |</span>
+      नमस्ते, मैं <span>आंथोनी</span> हूं | 
+      Ciao, sono <span>Aanthoni | </span>
+      안녕하세요, 저는 <span>앤토니</span>입니다 |
+      Olá, eu sou <span>Aanthoni |</span> 
+      مرحبا، أنا <span>آنتوني |</span>  
+      Merhaba, ben <span>Aanthoni |</span> 
+      สวัสดี, ฉันคือ <span>แอนโทนี |</span> 
+      Bună, eu sunt <span>Aanthoni |</span> 
+      Γεια, είμαι ο <span>Άντονι |</span> 
+      Hej, jag är <span>Aanthoni |</span> 
+      سلام، من <span>آنتونی</span> هستم  | 
+      Hei, minä olen <span>Aanthoni |</span>  
+      Hallo, ik ben <span>Aanthoni |</span> 
+      Cześć, jestem <span>Antoni |</span> 
+      Chào, tôi là <span>Aanthoni |</span> 
+      Hi, I am <span>Aanthoni |</span>
+      嗨，我是<span>安东尼 |</span>
+      Hola, soy <span>Aanthoni |</span>
+      Привет, я <span>Антони |</span>
+      Bonjour, je suis <span>Aanthoni |</span>
+      こんにちは、私は<span>アントニー |</span>です 
+      Hallo, ich bin <span>Aanthoni |</span>
+      नमस्ते, मैं <span>आंथोनी</span> हूं | 
+      Ciao, sono <span>Aanthoni | </span>
+      안녕하세요, 저는 <span>앤토니</span>입니다 |
+      Olá, eu sou <span>Aanthoni |</span> 
+      مرحبا، أنا <span>آنتوني |</span>  
+      Merhaba, ben <span>Aanthoni |</span> 
+      สวัสดี, ฉันคือ <span>แอนโทนี |</span> 
+      Bună, eu sunt <span>Aanthoni |</span> 
+      Γεια, είμαι ο <span>Άντονι |</span> 
+      Hej, jag är <span>Aanthoni |</span> 
+      سلام، من <span>آنتونی</span> هستم  | 
+      Hei, minä olen <span>Aanthoni |</span>  
+      Hallo, ik ben <span>Aanthoni |</span> 
+      Cześć, jestem <span>Antoni |</span> 
+      Chào, tôi là <span>Aanthoni |</span> 
+      Hi, I am <span>Aanthoni |</span>
+      嗨，我是<span>安东尼 |</span>
+      Hola, soy <span>Aanthoni |</span>
+      Привет, я <span>Антони |</span>
+      Bonjour, je suis <span>Aanthoni |</span>
+      こんにちは、私は<span>アントニー |</span>です 
+      Hallo, ich bin <span>Aanthoni |</span>
+      नमस्ते, मैं <span>आंथोनी</span> हूं | 
+      Ciao, sono <span>Aanthoni | </span>
       안녕하세요, 저는 <span>앤토니</span>입니다 |
       Olá, eu sou <span>Aanthoni |</span> 
       مرحبا، أنا <span>آنتوني |</span>  
@@ -339,7 +1196,7 @@
     const contentDiv = document.querySelector(".content");
     function adjustContentSize() {
       const viewportWidth = window.innerWidth;
-      const baseWidth = 1000;
+      const baseWidth = 1200; // Updated base width
       const scaleFactor =
         viewportWidth < baseWidth ? (viewportWidth / baseWidth) * 0.8 : 1;
       contentDiv.style.transform = `scale(${scaleFactor})`;
