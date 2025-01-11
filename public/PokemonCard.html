@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokemon Card Holo Effect</title>
+  <style>
+    :root {
+      --color1: rgb(170, 210, 255);
+      --color2: #ddccaa;
+      --front: url(../src/assets/Aanthoni-card.png);
+    }
+
+    body {
+      height: 100%;
+      margin: 0;
+      padding-top: 20px;
+      background: #050817;
+      font-family: "Heebo", sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      overflow: hidden;
+    }
+
+    .card {
+      width: 30vw;
+      height: 42vw;
+      max-width: 500px;
+      max-height: 700px;
+      background-color: #040712;
+      background-image: var(--front);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      border-radius: 5% / 3.5%;
+      box-shadow: -5px -5px 5px -5px var(--color1),
+        5px 5px 5px -5px var(--color2),
+        -7px -7px 10px -5px transparent,
+        7px 7px 10px -5px transparent,
+        0 0 5px 0px rgba(255, 255, 255, 0),
+        0 55px 35px -20px rgba(0, 0, 0, 0.5);
+      transition: transform 0.5s ease, box-shadow 0.2s ease;
+      will-change: transform, filter;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card:before,
+    .card:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      background-repeat: no-repeat;
+      opacity: 0.5;
+      mix-blend-mode: color-dodge;
+      transition: all 0.33s ease;
+    }
+
+    .card:before {
+      background-image: linear-gradient(115deg, transparent 0%, var(--color1) 25%, transparent 47%, transparent 53%, var(--color2) 75%, transparent 100%);
+      background-size: 300% 300%;
+      filter: brightness(0.5) contrast(1);
+    }
+
+    .card:after {
+      background-image: url(../src/assets/sparkles.gif), url(../src/assets/holo2.png), linear-gradient(125deg, #ff008450 15%, #fca40040 30%, #ffff0030 40%, #00ff8a20 60%, #00cfff40 70%, #cc4cfa50 85%);
+      background-size: 160%;
+      background-blend-mode: overlay;
+      filter: brightness(1) contrast(1);
+      opacity: 0.75;
+    }
+
+    .card:hover {
+      box-shadow: -20px -20px 30px -25px var(--color1), 20px 20px 30px -25px var(--color2), -7px -7px 10px -5px var(--color1), 7px 7px 10px -5px var(--color2), 0 0 13px 4px rgba(255, 255, 255, 0.3), 0 55px 35px -20px rgba(0, 0, 0, 0.5);
+    }
+
+    .card:hover:before {
+      background-position: 50% 50%;
+      opacity: 0.88;
+      filter: brightness(0.66) contrast(1.33);
+    }
+
+    .card:hover:after {
+      opacity: 1;
+      filter: brightness(1) contrast(1);
+    }
+
+    .hover-style {
+      display: none;
+    }
+
+    .card .bright-spot {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 70%);
+      border-radius: 50%;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      transition: opacity 0.2s ease;
+      opacity: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="bright-spot"></div>
+  </div>
+  <style class="hover-style"></style>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    const $cards = $(".card");
+    const $brightSpot = $(".bright-spot");
+
+    $cards.on("mousemove touchmove", function(e) {
+      // normalize touch/mouse
+      var pos = [e.offsetX, e.offsetY];
+      e.preventDefault();
+      if (e.type === "touchmove") {
+        pos = [e.touches[0].clientX - $(this).offset().left, e.touches[0].clientY - $(this).offset().top];
+      }
+      var $card = $(this);
+      // math for mouse position
+      var l = pos[0];
+      var t = pos[1];
+      var h = $card.height();
+      var w = $card.width();
+      var px = Math.abs(Math.floor(100 / w * l) - 100);
+      var py = Math.abs(Math.floor(100 / h * t) - 100);
+      var pa = (50 - px) + (50 - py);
+      // math for gradient / background positions
+      var lp = (50 + (px - 50) / 1.5);
+      var tp = (50 + (py - 50) / 1.5);
+      var ty = ((tp - 50) / 2) * -1;
+      var tx = ((lp - 50) / 1.5) * 0.5;
+
+      // Apply transformations
+      $card.css({
+        transform: `rotateX(${ty}deg) rotateY(${tx}deg)`,
+        backgroundPosition: `${lp}% ${tp}%`,
+      });
+
+      // Position the bright spot
+      $brightSpot.css({
+        left: `${l}px`,
+        top: `${t}px`,
+        opacity: 0 // Make the bright spot visible
+      });
+    });
+
+    $cards.on("mouseleave", function() {
+      $(this).css({
+        transform: "rotateX(0deg) rotateY(0deg)",
+      });
+      $brightSpot.css({
+        opacity: 0 // Hide the bright spot
+      });
+    });
+  </script>
+</body>
+</html>
