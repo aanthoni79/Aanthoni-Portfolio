@@ -6,7 +6,7 @@ import web from "./web.png";
 import github from "./github.png";
 import menu from "./menu.svg";
 import close from "./close.svg";
-import emptyroom from "./empty-room.jpg";
+import emptyroom from "./empty-room.png";
 import boy from "./boy.png"
 
 import css from "./tech/css.png";
@@ -25,7 +25,7 @@ import threejs from "./tech/threejs.svg";
 
 import adobe from "./company/adobe.png";
 import vsp from "./company/vsp.png";
-import adherely from "./company/adherely.jpeg";
+import adherely from "./company/adherely.png";
 
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
